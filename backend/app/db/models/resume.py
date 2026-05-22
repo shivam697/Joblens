@@ -52,7 +52,7 @@ class Resume(Base):
 
     # Only one resume per user can be active at a time
     # Active resume is used as default for ATS quick check and recommendations
-    is_active: Mapped[bool] = mapped_column(Boolean, default=False, server_default="0")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
 
     uploaded_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, nullable=False

@@ -141,7 +141,7 @@ class JobApplication(Base):
     # We NEVER hard delete job applications — data is too valuable
     # Every list query must include WHERE is_deleted = False
     is_deleted: Mapped[bool] = mapped_column(
-        Boolean, default=False, server_default="0", index=True
+        Boolean, default=False, server_default="false", index=True
     )
 
     created_at: Mapped[datetime] = mapped_column(

@@ -55,7 +55,7 @@ class User(Base):
         String(255), nullable=True, index=True
     )
 
-    is_active: Mapped[bool] = mapped_column(Boolean, default=True, server_default="1")
+    is_active: Mapped[bool] = mapped_column(Boolean, default=True, server_default="true")
 
     created_at: Mapped[datetime] = mapped_column(
         DateTime, default=datetime.utcnow, nullable=False

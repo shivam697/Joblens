@@ -4,8 +4,9 @@ uvicorn[standard]==0.29.0
 starlette==0.37.2
 
 # ── Database — MySQL (async) ────────────────────────
+aiosqlite
 sqlalchemy[asyncio]==2.0.30
-aiomysql==0.2.0
+asyncpg==0.29.0
 alembic==1.13.1
 
 # ── Database — MongoDB (async) ──────────────────────
