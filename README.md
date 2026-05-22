@@ -184,7 +184,7 @@ Open `backend/.env` and fill in all required values.
 | `GEMINI_API_KEY` | ✅ | From Google AI Studio |
 | `MAIL_USERNAME` | ✅ | Gmail address for notifications |
 | `MAIL_PASSWORD` | ✅ | Gmail App Password 16 characters |
-| `FRONTEND_URL` | ✅ | http://localhost:5173 |
+| `FRONTEND_URL` | ✅ | http://localhost:5173 for localdev | https://joblens.vercel.app/ for production |
 
 #### Run Database Migrations
 
@@ -194,8 +194,8 @@ Open `backend/.env` and fill in all required values.
 
     uvicorn app.main:app --host localhost --port 8000 --reload
 
-API available at **http://localhost:8000**
-Interactive docs at **http://localhost:8000/docs**
+API available at **http://localhost:8000** or **https://joblens-xuom.onrender.com/**
+Interactive docs at **http://localhost:8000/docs** or **https://joblens-xuom.onrender.com/docs**
 
 ### 3. Frontend Setup
 
@@ -203,7 +203,7 @@ Interactive docs at **http://localhost:8000/docs**
     npm install
     npm run dev
 
-Frontend available at **http://localhost:5173**
+Frontend available at **http://localhost:5173** or **https://joblens.vercel.app/**
 
 ---
 
