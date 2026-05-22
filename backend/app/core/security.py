@@ -133,8 +133,8 @@ def set_auth_cookie(response: Response, token: str) -> None:
         key=COOKIE_NAME,
         value=token,
         httponly=True,           # JS cannot access this cookie — XSS protection
-        samesite="lax",          # Blocks cross-site requests but allows OAuth redirects
-        secure=settings.APP_ENV != "development",  # True in production (requires HTTPS)
+        samesite="none",          # Blocks cross-site requests but allows OAuth redirects
+        secure=True,  # True in production (requires HTTPS)
         max_age=settings.TOKEN_EXPIRY_HOURS * 3600,  # Convert hours to seconds
         path="/",                # Cookie available on all routes
     )
@@ -152,7 +152,7 @@ def clear_auth_cookie(response: Response) -> None:
     response.delete_cookie(
         key=COOKIE_NAME,
         httponly=True,
-        samesite="lax",
-        secure=settings.APP_ENV != "development",
+        samesite="none",
+        secure=True,
         path="/",
     )
