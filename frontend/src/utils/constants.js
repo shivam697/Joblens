@@ -48,4 +48,4 @@ export const INTERVIEW_MODES = [
 export const API_BASE_URL = 'http://localhost:8000/api/v1'
 
 // Backend base URL (non-API routes like OAuth)
-export const BACKEND_URL = 'http://localhost:8000'
+export const BACKEND_URL = import.meta.env.VITE_API_URL
