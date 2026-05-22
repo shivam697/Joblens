@@ -7,7 +7,7 @@ for ATS analysis — we store it to avoid re-parsing the PDF every time.
 """
 
 import uuid
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sqlalchemy import String, Boolean, DateTime, Text, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
@@ -55,7 +55,9 @@ class Resume(Base):
     is_active: Mapped[bool] = mapped_column(Boolean, default=False, server_default="false")
 
     uploaded_at: Mapped[datetime] = mapped_column(
-        DateTime, default=datetime.utcnow, nullable=False
+        DateTime(timezone=True),
+        default=lambda: datetime.now(timezone.utc),
+        nullable=False,
     )
 
     # ── Relationships ──────────────────────────────────────
