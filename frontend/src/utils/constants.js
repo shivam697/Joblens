@@ -44,8 +44,8 @@ export const INTERVIEW_MODES = [
   { value: 'phone', label: 'Phone' },
 ]
 
-// Backend API base URL
-export const API_BASE_URL = 'http://localhost:8000/api/v1'
+// Backend base URL — uses VITE_API_URL from .env, falls back to localhost for local dev
+export const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
-// Backend base URL (non-API routes like OAuth)
-export const BACKEND_URL = import.meta.env.VITE_API_URL
+// Backend API base URL — all API calls go through this
+export const API_BASE_URL = `${BACKEND_URL}/api/v1`
