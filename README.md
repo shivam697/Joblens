@@ -302,9 +302,6 @@ Google OAuth and Facebook OAuth configuration instructions.
 
 ---
 
-## 📝 License
-
-This project is open-source and available under the MIT License.
 
 ---
 
