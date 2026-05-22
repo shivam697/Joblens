@@ -184,7 +184,7 @@ Open `backend/.env` and fill in all required values.
 | `GEMINI_API_KEY` | ✅ | From Google AI Studio |
 | `MAIL_USERNAME` | ✅ | Gmail address for notifications |
 | `MAIL_PASSWORD` | ✅ | Gmail App Password 16 characters |
-| `FRONTEND_URL` | ✅ | http://localhost:5173 or https://joblens-two.vercel |
+| `FRONTEND_URL` | ✅ | http://localhost:5173 or https://joblens-two.vercel.app |
 
 #### Run Database Migrations
 
@@ -203,7 +203,7 @@ Interactive docs at **http://localhost:8000/docs** or **https://joblens-xuom.onr
     npm install
     npm run dev
 
-Frontend available at **http://localhost:5173** or **https://joblens-two.vercel**
+Frontend available at **http://localhost:5173** or **https://joblens-two.vercel.app**
 
 ---
 
