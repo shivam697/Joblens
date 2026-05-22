@@ -1,0 +1,133 @@
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   JobLense — Global Styles & Design System
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base Styles ──────────────────────────────────────── */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-app text-slate-100 font-body antialiased;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-600;
+  }
+}
+
+/* ── Reusable Component Classes ──────────────────────── */
+@layer components {
+  /* Card container with consistent styling */
+  .card {
+    @apply bg-slate-900 border border-slate-700 rounded-2xl shadow-lg;
+  }
+
+  /* Primary action button */
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-medium
+           px-4 py-2.5 rounded-xl transition-all duration-200 
+           flex items-center justify-center gap-2
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Secondary/outline button */
+  .btn-secondary {
+    @apply bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium
+           px-4 py-2.5 rounded-xl border border-slate-600 
+           transition-all duration-200 flex items-center justify-center gap-2;
+  }
+
+  /* Danger/destructive button */
+  .btn-danger {
+    @apply bg-rose-600 hover:bg-rose-700 text-white font-medium
+           px-4 py-2.5 rounded-xl transition-all duration-200
+           flex items-center justify-center gap-2;
+  }
+
+  /* Text input fields */
+  .input-field {
+    @apply bg-slate-950 border border-slate-600 text-slate-100 rounded-xl
+           px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500
+           focus:border-transparent placeholder-slate-500 transition-all duration-200;
+  }
+
+  /* Select dropdown */
+  .select-field {
+    @apply bg-slate-950 border border-slate-600 text-slate-100 rounded-xl
+           px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-indigo-500
+           focus:border-transparent appearance-none cursor-pointer;
+  }
+
+  /* Page headings */
+  .page-title {
+    @apply text-2xl font-bold text-slate-100 font-display;
+  }
+
+  /* Section labels */
+  .section-label {
+    @apply text-sm font-medium text-slate-400 uppercase tracking-wider;
+  }
+
+  /* Form labels */
+  .form-label {
+    @apply block text-sm font-medium text-slate-300 mb-1.5;
+  }
+}
+
+/* ── Animations ──────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  50% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.7; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
