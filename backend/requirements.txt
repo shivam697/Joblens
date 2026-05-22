@@ -26,7 +26,7 @@ itsdangerous==2.2.0
 # ── File Handling ───────────────────────────────────
 python-multipart==0.0.9
 pdfplumber==0.11.0
-pillow==10.3.0
+pillow==10.4.0
 
 # ── Email ───────────────────────────────────────────
 fastapi-mail==1.4.1
