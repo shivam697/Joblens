@@ -24,9 +24,11 @@ if _is_sqlite:
     # check_same_thread=False is required for async SQLite
     engine_kwargs["connect_args"] = {"check_same_thread": False}
 else:
-    engine_kwargs["pool_recycle"] = 3600
-    engine_kwargs["pool_size"] = 10
-    engine_kwargs["max_overflow"] = 20
+# --- UPDATED FOR SERVERLESS NEON POSTGRESQL ---
+    engine_kwargs["pool_pre_ping"] = True   # Silently tests and replaces dead connections
+    engine_kwargs["pool_recycle"] = 300     # Refresh connections every 5 minutes instead of 1 hour
+    engine_kwargs["pool_size"] = 5          # Lower pool size prevents overwhelming serverless limits
+    engine_kwargs["max_overflow"] = 10
 
 engine = create_async_engine(settings.DATABASE_URL, **engine_kwargs)
 
